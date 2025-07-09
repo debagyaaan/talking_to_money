@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your personal finance agent that understands. Get AI-powered insights, smart analytics, and personalized financial advice with Talking to Money.">
+  <meta name="keywords" content="personal finance, AI financial advisor, money management, financial planning, budgeting, investment advice">
+  <meta name="author" content="Talking to Money Team">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://talking-to-money.com/">
+  <meta property="og:title" content="Talking to Money - Your Personal Finance AI Agent">
+  <meta property="og:description" content="Get AI-powered insights, smart analytics, and personalized financial advice. Your personal finance agent that understands.">
+  <meta property="og:image" content="https://talking-to-money.com/og-image.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://talking-to-money.com/">
+  <meta property="twitter:title" content="Talking to Money - Your Personal Finance AI Agent">
+  <meta property="twitter:description" content="Get AI-powered insights, smart analytics, and personalized financial advice. Your personal finance agent that understands.">
+  <meta property="twitter:image" content="https://talking-to-money.com/twitter-image.png">
+  
+  <!-- Favicon - Uncomment when favicon files are available -->
+  <!-- <link rel="icon" type="image/x-icon" href="/favicon.ico"> -->
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"> -->
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> -->
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> -->
+  <link rel="manifest" href="/site.webmanifest">
+  
+  <!-- Theme Color for Mobile Browsers -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  
+  <title>Talking to Money - Your Personal Finance AI Agent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="gradient-text">Talking to Money</span>
+        </h1>
+        <p class="hero-subtitle">Your personal finance agent that understands.</p>
+        <div class="hero-actions">
+          <button id="see-demo" class="btn btn-primary" onclick="scrollToSection('demo')">
+            <span>See It in Action</span>
+            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17l9.2-9.2M17 17V7H7"/>
+            </svg>
+          </button>
+          <button class="btn btn-secondary" onclick="scrollToSection('features')">
+            <span>Learn More</span>
+          </button>
+        </div>
+        <nav class="header-nav">
+          <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+                  <div class="nav-links" id="nav-links">
+          <a href="#problem" class="nav-link">Problem</a>
+          <a href="#solution" class="nav-link">Solution</a>
+          <a href="#features" class="nav-link">Features</a>
+          <a href="#demo" class="nav-link">Demo</a>
+          <a href="#team" class="nav-link">Team</a>
+        </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <section id="problem" class="problem-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">The Problem</h2>
+        <p class="section-subtitle">Why current AI financial tools fall short</p>
+      </div>
+      <div class="problem-content">
+        <div class="problem-text">
+          <p>Most AI financial tools today operate in isolation, without access to real user data. They provide generic advice that doesn't reflect your actual financial situation, spending patterns, or personal goals.</p>
+          <p>Without access to your real financial data, these tools can only offer:</p>
+          <ul class="problem-list">
+            <li>Generic financial advice that doesn't apply to your situation</li>
+            <li>One-size-fits-all recommendations</li>
+            <li>Impersonal responses that lack context</li>
+            <li>Limited ability to track your progress over time</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="solution" class="solution-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Solution</h2>
+        <p class="section-subtitle">Personalized AI that understands your real financial data</p>
+      </div>
+      <div class="solution-content">
+        <div class="solution-text">
+          <p>Our AI agent connects directly to your financial data through Fi's MCP server, providing truly personalized insights and recommendations based on your actual spending, saving, and investment patterns.</p>
+          <p>With access to your real financial data, you can ask questions like:</p>
+          <ul class="solution-list">
+            <li>"How much did I spend on dining out last month compared to groceries?"</li>
+            <li>"What's my current savings rate and how does it compare to my goal?"</li>
+            <li>"Which categories are my biggest spending areas this quarter?"</li>
+            <li>"How much should I save monthly to reach my vacation goal by December?"</li>
+            <li>"What's my investment portfolio performance and what should I adjust?"</li>
+            <li>"Am I on track to meet my retirement savings target?"</li>
+          </ul>
+          <p>Get instant, personalized answers based on your actual financial data, not generic advice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="features" class="features-section fade-in-up">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Key Features</h2>
+        <p class="section-subtitle">Discover how AI transforms your financial management</p>
+      </div>
+      <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <h3>Natural Language Chat</h3>
+        <p>Ask questions about your finances in plain English. Get instant, intelligent responses about your spending, savings, and investments.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Smart Analytics</h3>
+        <p>Advanced AI-powered insights that identify spending patterns, suggest optimizations, and predict future financial trends.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Goal Tracking</h3>
+        <p>Set financial goals and track your progress with personalized recommendations and milestone celebrations.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Secure & Private</h3>
+        <p>Bank-level security with end-to-end encryption. Your financial data stays private and protected at all times.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🚀</div>
+        <h3>AI-Powered Insights</h3>
+        <p>Get personalized financial advice and recommendations based on your unique financial situation and goals.</p>
+      </div>
+    </div>
+  </section>
+  <section id="demo" class="demo-section fade-in-up">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Demo Preview</h2>
+        <p class="section-subtitle">See our AI in action with real-world examples</p>
+      </div>
+      <div class="demo-images">
+      <img src="wireframes/ui1.png" alt="Chat UI mockup">
+      <img src="wireframes/ui2.png" alt="Projection graph mockup">
+      </div>
+    </div>
+  </section>
+  
+  <section id="team" class="team-section fade-in-up">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Meet the Team</h2>
+        <p class="section-subtitle">The brilliant minds behind Talking to Money</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="member-avatar">
+            <span class="avatar-initial">BR</span>
+          </div>
+          <h3 class="member-name">Basudev Rawat</h3>
+          <p class="member-branch">NITS EIE '27</p>
+        </div>
+        <div class="team-member">
+          <div class="member-avatar">
+            <span class="avatar-initial">DB</span>
+          </div>
+          <h3 class="member-name">Debagyan Bordoloi</h3>
+          <p class="member-branch">NITS CSE '26</p>
+        </div>
+        <div class="team-member">
+          <div class="member-avatar">
+            <span class="avatar-initial">IJ</span>
+          </div>
+          <h3 class="member-name">Irene Therese Joseph</h3>
+          <p class="member-branch">NITS EIE '27</p>
+        </div>
+        <div class="team-member">
+          <div class="member-avatar">
+            <span class="avatar-initial">KA</span>
+          </div>
+          <h3 class="member-name">Kaberi Acharya</h3>
+          <p class="member-branch">NITS EIE '27</p>
+        </div>
+        <div class="team-member">
+          <div class="member-avatar">
+            <span class="avatar-initial">ND</span>
+          </div>
+          <h3 class="member-name">Namita Devi</h3>
+          <p class="member-branch">NITS EIE '27</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="https://github.com/debagyaaan/talking_to_money" class="footer-link" target="_blank" rel="noopener noreferrer">
+            <svg class="footer-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            View on GitHub
+          </a>
+          <span class="footer-divider">|</span>
+          <span class="footer-text">Built for Agentic AI Day 2025</span>
+        </div>
+        <div class="footer-credit">
+          <p class="credit-text">An AI-powered personal finance assistant using Fi MCP Server & Gemini</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

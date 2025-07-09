@@ -1,0 +1,10 @@
+{
+  "name": "Talking to Money",
+  "short_name": "Talking Money",
+  "description": "Your personal finance AI agent that understands",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#2563eb",
+  "icons": []
+} 

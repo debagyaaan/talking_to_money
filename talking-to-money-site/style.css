@@ -995,6 +995,7 @@ p {
   width: 220px;
   height: 140px;
   pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(.4,2,.6,1), filter 0.5s cubic-bezier(.4,2,.6,1), transform 0.5s cubic-bezier(.4,2,.6,1), left 0.5s cubic-bezier(.4,2,.6,1), right 0.5s cubic-bezier(.4,2,.6,1);
 }
 
 .carousel-img--prev {

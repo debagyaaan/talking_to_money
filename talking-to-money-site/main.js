@@ -181,6 +181,21 @@ function handleScrollAnimations() {
     carousel.addEventListener('touchstart', pauseAutoSlide);
     carousel.addEventListener('touchend', resumeAutoSlide);
   }
+
+  // Pause auto-sliding when demo video is visible
+  const demoVideo = document.getElementById('demo-video');
+  if (demoVideo) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          pauseAutoSlide();
+        } else {
+          resumeAutoSlide();
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(demoVideo);
+  }
 })();
 
 // Demo video click-to-play/pause

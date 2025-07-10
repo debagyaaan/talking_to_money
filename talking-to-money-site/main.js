@@ -111,63 +111,75 @@ function handleScrollAnimations() {
   const images = Array.from(document.querySelectorAll('.carousel-img'));
   const total = images.length;
   let current = 0;
-
-  // Get image width (responsive)
-  function getImgWidth() {
-    if (!images[0]) return 0;
-    return images[0].getBoundingClientRect().width + 20; // margin
-  }
+  let autoSlideInterval = null;
+  let isPaused = false;
 
   function updateCarousel() {
-    // Move the track so the main image is centered
-    const imgWidth = getImgWidth();
-    const carousel = document.querySelector('.carousel');
-    const carouselWidth = carousel ? carousel.offsetWidth : 0;
-    const trackWidth = imgWidth * total;
-    let offset = (current * imgWidth * -1) + ((carouselWidth - imgWidth) / 2);
-
-    // Prevent empty space at the ends if total images < 3
-    if (carouselWidth && trackWidth < carouselWidth) {
-      offset = (carouselWidth - trackWidth) / 2;
-    }
-
-    track.style.transform = `translateX(${offset}px)`;
-
     images.forEach((img, i) => {
-      img.classList.remove('carousel-img--main', 'carousel-img--side');
-      img.style.zIndex = 1;
-      img.style.opacity = 0.5;
-      img.style.filter = 'blur(2px)';
-      img.style.transform = 'scale(0.9)';
+      img.classList.remove('carousel-img--main', 'carousel-img--prev', 'carousel-img--next');
+      img.style.display = 'none';
+      img.style.position = '';
     });
-
     // Main image
     images[current].classList.add('carousel-img--main');
-    images[current].style.zIndex = 3;
-    images[current].style.opacity = 1;
-    images[current].style.filter = 'none';
-    images[current].style.transform = 'scale(1.05)';
+    images[current].style.display = 'block';
+    images[current].style.position = 'relative';
+    // Previous image (left, blurred)
+    const prev = (current - 1 + total) % total;
+    images[prev].classList.add('carousel-img--prev');
+    images[prev].style.display = 'block';
+    // Next image (right, blurred)
+    const next = (current + 1) % total;
+    images[next].classList.add('carousel-img--next');
+    images[next].style.display = 'block';
+  }
 
-    // Side images
-    const prevSide = (current - 1 + total) % total;
-    const nextSide = (current + 1) % total;
-    images[prevSide].classList.add('carousel-img--side');
-    images[nextSide].classList.add('carousel-img--side');
+  function nextSlide() {
+    current = (current + 1) % total;
+    updateCarousel();
+  }
+  function prevSlide() {
+    current = (current - 1 + total) % total;
+    updateCarousel();
+  }
+
+  function startAutoSlide() {
+    if (autoSlideInterval) clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(() => {
+      if (!isPaused) nextSlide();
+    }, 3000);
+  }
+  function pauseAutoSlide() {
+    isPaused = true;
+  }
+  function resumeAutoSlide() {
+    isPaused = false;
   }
 
   const nextBtn = document.querySelector('.carousel-btn.next');
   const prevBtn = document.querySelector('.carousel-btn.prev');
-  if (nextBtn && prevBtn && images.length > 0 && track) {
+  if (nextBtn && prevBtn && images.length > 0) {
     nextBtn.addEventListener('click', () => {
-      current = (current + 1) % total;
-      updateCarousel();
+      nextSlide();
+      startAutoSlide();
     });
     prevBtn.addEventListener('click', () => {
-      current = (current - 1 + total) % total;
-      updateCarousel();
+      prevSlide();
+      startAutoSlide();
     });
     window.addEventListener('resize', updateCarousel);
     updateCarousel();
+    startAutoSlide();
+  }
+
+  // Pause on hover (desktop)
+  const carousel = document.querySelector('.carousel');
+  if (carousel) {
+    carousel.addEventListener('mouseenter', pauseAutoSlide);
+    carousel.addEventListener('mouseleave', resumeAutoSlide);
+    // Pause on touch (mobile)
+    carousel.addEventListener('touchstart', pauseAutoSlide);
+    carousel.addEventListener('touchend', resumeAutoSlide);
   }
 })();
 

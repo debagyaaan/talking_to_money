@@ -105,5 +105,90 @@ function handleScrollAnimations() {
   });
 }
 
+// Carousel logic for demo preview
+(function() {
+  const track = document.querySelector('.carousel-track');
+  const images = Array.from(document.querySelectorAll('.carousel-img'));
+  const total = images.length;
+  let current = 0;
+
+  // Get image width (responsive)
+  function getImgWidth() {
+    if (!images[0]) return 0;
+    return images[0].getBoundingClientRect().width + 20; // margin
+  }
+
+  function updateCarousel() {
+    // Move the track so the main image is centered
+    const imgWidth = getImgWidth();
+    const carousel = document.querySelector('.carousel');
+    const carouselWidth = carousel ? carousel.offsetWidth : 0;
+    const trackWidth = imgWidth * total;
+    let offset = (current * imgWidth * -1) + ((carouselWidth - imgWidth) / 2);
+
+    // Prevent empty space at the ends if total images < 3
+    if (carouselWidth && trackWidth < carouselWidth) {
+      offset = (carouselWidth - trackWidth) / 2;
+    }
+
+    track.style.transform = `translateX(${offset}px)`;
+
+    images.forEach((img, i) => {
+      img.classList.remove('carousel-img--main', 'carousel-img--side');
+      img.style.zIndex = 1;
+      img.style.opacity = 0.5;
+      img.style.filter = 'blur(2px)';
+      img.style.transform = 'scale(0.9)';
+    });
+
+    // Main image
+    images[current].classList.add('carousel-img--main');
+    images[current].style.zIndex = 3;
+    images[current].style.opacity = 1;
+    images[current].style.filter = 'none';
+    images[current].style.transform = 'scale(1.05)';
+
+    // Side images
+    const prevSide = (current - 1 + total) % total;
+    const nextSide = (current + 1) % total;
+    images[prevSide].classList.add('carousel-img--side');
+    images[nextSide].classList.add('carousel-img--side');
+  }
+
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  if (nextBtn && prevBtn && images.length > 0 && track) {
+    nextBtn.addEventListener('click', () => {
+      current = (current + 1) % total;
+      updateCarousel();
+    });
+    prevBtn.addEventListener('click', () => {
+      current = (current - 1 + total) % total;
+      updateCarousel();
+    });
+    window.addEventListener('resize', updateCarousel);
+    updateCarousel();
+  }
+})();
+
+// Demo video click-to-play/pause
+(function() {
+  const video = document.getElementById('demo-video');
+  if (video) {
+    video.addEventListener('click', function(e) {
+      // Prevent default behavior and stop propagation
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // Toggle play/pause regardless of where the click occurs
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  }
+})();
+
 
   

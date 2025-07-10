@@ -155,15 +155,32 @@
       </div>
     </div>
   </section>
-  <section id="demo" class="demo-section fade-in-up">
+  <section id="demo" class="demo-section">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Demo Preview</h2>
-        <p class="section-subtitle">See our AI in action with real-world examples</p>
+        <p class="section-subtitle">See how Talking to Money looks in action.</p>
       </div>
-      <div class="demo-images">
-      <img src="wireframes/ui1.png" alt="Chat UI mockup">
-      <img src="wireframes/ui2.png" alt="Projection graph mockup">
+      <div class="carousel">
+        <button class="carousel-btn prev" aria-label="Previous">&lt;</button>
+        <div class="carousel-track">
+          <img src="wireframes/ui1.png" class="carousel-img" alt="UI 1" />
+          <img src="wireframes/ui2.png" class="carousel-img" alt="UI 2" />
+          <img src="wireframes/ui3.png" class="carousel-img" alt="UI 3" />
+          <img src="wireframes/ui4.png" class="carousel-img" alt="UI 4" />
+          <img src="wireframes/ui5.png" class="carousel-img" alt="UI 5" />
+          <img src="wireframes/ui6.png" class="carousel-img" alt="UI 6" />
+          <img src="wireframes/ui7.png" class="carousel-img" alt="UI 7" />
+        </div>
+        <button class="carousel-btn next" aria-label="Next">&gt;</button>
+      </div>
+      <div class="demo-video-section" style="margin-top: 3rem; text-align: center;">
+        <h3 style="margin-bottom: 1rem;">Watch the Demo Video</h3>
+        <video id="demo-video" width="640" height="360" controls poster="wireframes/ui1.png" style="max-width: 100%; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); cursor: pointer;">
+          <source src="demo/prototypemock_demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div style="font-size: 0.95rem; color: #64748b; margin-top: 0.5rem;">Click the video to play or pause.</div>
       </div>
     </div>
   </section>
